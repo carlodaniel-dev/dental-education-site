@@ -1,0 +1,136 @@
+---
+const { currentPage } = Astro.props;
+---
+
+<header id="header">
+    <div class="header_hamburger" id="btn_open">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    <div class="header_logo_area">
+        <div class="header_logo_icon">
+            <svg width="25" height="25" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                    d="M12 2c-1.5 0-2.8.5-3.8 1.3C7.2 4.1 6 4 5 4.5 3.5 5.3 3 7 3.2 8.5c.2 1 .7 2 1.3 2.8.4.6.5 1.3.3 2L4 17c-.3 1.2.1 2.5 1 3.3.7.6 1.6.7 2.4.3.6-.3 1-.8 1.3-1.4L9.5 17c.2-.6.8-1 1.5-1s1.3.4 1.5 1l.8 2.2c.3.6.7 1.1 1.3 1.4.8.4 1.7.3 2.4-.3.9-.8 1.3-2.1 1-3.3l-.8-3.7c-.2-.7-.1-1.4.3-2 .6-.8 1.1-1.8 1.3-2.8.2-1.5-.3-3.2-1.8-4C16.8 4 16 4.1 15.8 3.3 14.8 2.5 13.5 2 12 2z"
+                ></path>
+            </svg>
+        </div>
+        <div class="header_site_name">
+            <span class="header_site_title">Perfección Dental</span>
+            <span class="header_site_sub">Camino a la excelencia bucal</span>
+        </div>
+    </div>
+
+    <div class="header_page_indicator">
+        <span class="header_page_dot"></span>
+        <span class="header_page_label">{currentPage}</span>
+    </div>
+</header>
+
+<style>
+    #header {
+        height: 64px;
+        background: #1e293b;
+        display: flex;
+        align-items: center;
+        padding: 0 24px;
+        gap: 16px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 200;
+    }
+
+    #header::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background: linear-gradient(90deg, #1783db, #38bdf8, #1783db);
+    }
+
+    .header_hamburger {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        cursor: pointer;
+        padding: 4px;
+    }
+
+    .header_hamburger span {
+        display: block;
+        width: 20px;
+        height: 1.5px;
+        background: #94a3b8;
+        border-radius: 2px;
+    }
+
+    .header_logo_area {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .header_logo_icon {
+        width: 34px;
+        height: 34px;
+        border-radius: 8px;
+        background: rgba(23, 131, 219, 0.2);
+        border: 0.5px solid rgba(23, 131, 219, 0.4);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 16px;
+        color: #38bdf8;
+    }
+
+    .header_site_name {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .header_site_title {
+        font-size: 13px;
+        font-weight: 500;
+        color: #f1f5f9;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        line-height: 1;
+    }
+
+    .header_site_sub {
+        font-size: 10px;
+        color: #64748b;
+        letter-spacing: 0.04em;
+        margin-top: 3px;
+    }
+
+    .header_page_indicator {
+        margin-left: auto;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        background: rgba(23, 131, 219, 0.12);
+        border: 0.5px solid rgba(23, 131, 219, 0.25);
+        border-radius: 20px;
+        padding: 4px 12px;
+    }
+
+    .header_page_dot {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: #1783db;
+    }
+
+    .header_page_label {
+        font-size: 11px;
+        color: #38bdf8;
+        font-weight: 500;
+    }
+</style>
