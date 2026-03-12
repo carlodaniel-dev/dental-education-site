@@ -31,13 +31,11 @@ window.addEventListener("resize", function () {
         body.classList.remove("body_move");
         side_menu.classList.remove("menu__side_move");
     }
-
     if (window.innerWidth < 760) {
-        body.classList.add("body_move");
-        side_menu.classList.add("menu__side_move");
+        body.classList.remove("body_move");
+        side_menu.classList.remove("menu__side_move");
     }
 });
-
 window.addEventListener("load", function() {
     setAnio("yearToday");
 });

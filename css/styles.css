@@ -415,13 +415,21 @@ footer {
 
 /*-------------------------------> Responsive*/
 @media screen and (max-width: 760px) {
+    body {
+        margin-left: 0px;
+    }
+
     .body_move {
         margin-left: 0px;
     }
 
+    .menu__side {
+        left: -80px;
+    }
+
     .menu__side_move {
         width: 80px;
-        left: -80px;
+        left: 0px;
     }
 
     .introduccion {
