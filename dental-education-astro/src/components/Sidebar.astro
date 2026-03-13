@@ -1,10 +1,14 @@
 ---
+import Home from "./icon/Home.astro";
+import Book from "./icon/Book.astro";
+import Presentation from "./icon/Presentation.astro";
+
 const { currentPage } = Astro.props;
 
 const nav_items = [
-    { label: "Inicio", href: "/", icon: "fas fa-home" },
-    { label: "Biblioteca", href: "/biblioteca", icon: "fas fa-book" },
-    { label: "Clases", href: "/clases", icon: "fas fa-video" },
+    { label: "Inicio", href: "/", icon: Home },
+    { label: "Biblioteca", href: "/biblioteca", icon: Book },
+    { label: "Clases", href: "/clases", icon: Presentation },
 ];
 ---
 
@@ -17,7 +21,7 @@ const nav_items = [
                 class={`sidebar_item ${currentPage === item.label ? "sidebar_item_active" : ""}`}
                 title={item.label}
             >
-                <i class={item.icon} />
+                <item.icon />
                 <span class="sidebar_label">{item.label}</span>
             </a>
         ))
