@@ -108,13 +108,15 @@ const nav_items = [
         display: inline;
     }
 
-    /* ================================
+/* ================================
    RESPONSIVE SIDEBAR
 ================================ */
     @media screen and (max-width: 760px) {
         .sidebar {
             left: -200px;
             width: 200px;
+            transition: left 1000ms ease-in-out,
+            width 1000ms ease-in-out;
         }
 
         .sidebar_expanded {

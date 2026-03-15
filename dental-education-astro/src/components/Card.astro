@@ -1,0 +1,20 @@
+---
+import CardText from "./CardText.astro";
+
+const CARDS = [
+    {
+        title: "Noteworthy technology acquisitions 2021",
+        description: "Here are the biggest technology acquisitions of 2025 so far, in reverse chronological order."
+    },
+    {
+        title: "Noteworthy technology acquisitions 2021",
+        description: "Here are the biggest technology acquisitions of 2025 so far, in reverse chronological order."
+    }
+];
+---
+
+<div class="grid grid-cols-2 gap-5">
+    {CARDS.map((card) => (
+        <CardText {...card} />
+    ))}
+</div>
