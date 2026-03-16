@@ -3,18 +3,18 @@ import CardText from "./CardText.astro";
 
 const CARDS = [
     {
-        title: "Noteworthy technology acquisitions 2021",
-        description: "Here are the biggest technology acquisitions of 2025 so far, in reverse chronological order."
+        title: "Cambio de Hábitos",
+        description:
+            "Pequeños ajustes en tu rutina diaria marcan una gran diferencia en tu salud bucal. Una técnica correcta de cepillado, el uso regular del hilo dental y visitas periódicas al dentista son los pilares de una sonrisa saludable y duradera. Te acompañamos en cada paso del camino.",
     },
     {
-        title: "Noteworthy technology acquisitions 2021",
-        description: "Here are the biggest technology acquisitions of 2025 so far, in reverse chronological order."
-    }
+        title: "Mentalidad Abierta en Odontología",
+        description:
+            "En odontología, la innovación es clave para ofrecer los mejores tratamientos. Abandonar métodos rígidos y abrirse a nuevas técnicas, tecnologías y enfoques modernos permite brindar una atención más efectiva y personalizada. El cambio constante es parte del crecimiento profesional.",
+    },
 ];
 ---
 
-<div class="grid grid-cols-2 gap-5">
-    {CARDS.map((card) => (
-        <CardText {...card} />
-    ))}
+<div class="grid grid-cols-2 gap-5" >
+    {CARDS.map((card) => <CardText {...card} />)}
 </div>

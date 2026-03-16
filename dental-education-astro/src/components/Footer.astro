@@ -1,0 +1,74 @@
+---
+const year = new Date().getFullYear();
+
+import Tooth from "../components/icon/Tooth.astro";
+---
+
+<footer class="footer_wrapper rounded-base shadow-xs">
+    <div class="w-full p-4 md:py-8">
+        <div class="sm:flex sm:items-center sm:justify-between">
+            <div
+                class="flex items-center mb-4 sm:mb-0 space-x-3 rtl:space-x-reverse"
+            >
+                <div class="footer_logo_icon">
+                    <Tooth />
+                </div>
+                <div class="footer_brand_text">
+                    <span
+                        class="text-heading self-center text-lg font-semibold whitespace-nowrap"
+                    >
+                        Perfección Dental
+                    </span>
+                    <p class="text-sm text-body mt-1">
+                        Tu camino hacia la excelencia bucal. Aprendizaje,
+                        hábitos y especialización dental.
+                    </p>
+                </div>
+            </div>
+            <ul
+                class="flex flex-wrap items-center mb-6 text-sm font-medium text-body sm:mb-0"
+            >
+                <li>
+                    <a
+                        href="https://wa.me/+593984039120"
+                        class="hover:underline me-4 md:me-6">+593 98 403 9120</a
+                    >
+                </li>
+                <li>
+                    <a
+                        href="mailto:dancode.lab01@gmail.com"
+                        class="hover:underline me-4 md:me-6"
+                        >dancode.lab01@gmail.com</a
+                    >
+                </li>
+            </ul>
+        </div>
+        <hr class="my-6 border-default sm:mx-auto lg:my-8" />
+        <span class="block text-sm text-body sm:text-center"
+            >© {year}
+            <a href="https://flowbite.com/" class="hover:underline"
+                >DanCodeLab™</a
+            >. All Rights Reserved.</span
+        >
+    </div>
+</footer>
+
+<style>
+    .footer_wrapper {
+        border-radius: 10px;
+        border-color: rgb(112, 134, 153);
+        background: #1e293b;
+        color: #f1f5f9;
+        margin-top: 20px;
+    }
+
+    .footer_wrapper span,
+    li,
+    a {
+        color: #38bdf8;
+    }
+
+    .footer_wrapper p {
+        color: #94a3b8;
+    }
+</style>

@@ -7,11 +7,7 @@ interface Props {
 const { title, description } = Astro.props;
 ---
 
-<!-- <Fragment set:html={icon} /> -->
-<a
-    href="#"
-    class="bg-neutral-primary-soft block p-6 border border-default rounded-base shadow-xs hover:bg-neutral-secondary-medium"
->
+<div class="card_dental block p-6 border border-default rounded-base shadow-xs">
     <h5
         class="mb-3 text-2xl font-semibold tracking-tight text-heading leading-8"
     >
@@ -20,4 +16,15 @@ const { title, description } = Astro.props;
     <p class="text-body">
         {description}
     </p>
-</a>
+</div>
+
+<style>
+    .card_dental {
+        background-color: #f0f7ff;
+        border-left: 3px solid #1783db;
+    }
+
+    .card_dental:hover {
+        background-color: #e3f2ff;
+    }
+</style>

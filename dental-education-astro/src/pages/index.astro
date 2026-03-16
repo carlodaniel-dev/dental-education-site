@@ -4,6 +4,10 @@ import "../styles/global.css";
 import Layout from "../layouts/Layout.astro";
 
 import Card from "../components/Card.astro";
+import Banner from "../components/Banner.astro";
+import Footer from "../components/Footer.astro";
+
+import School from "../components/icon/School.astro";
 ---
 
 <Layout currentPage="Inicio">
@@ -24,6 +28,16 @@ import Card from "../components/Card.astro";
 
 	<section class="card">
 		<Card />
+	</section>
+
+	<section class="banner">
+		<Banner
+			titulo="Especialízate en Odontología"
+			descripcion="¿Listo para dar el siguiente paso?..."
+			textoEnlace="Elegir una especialidad es una decisión estratégica. No solo abre puertas, define tu futuro, evaluando los requisitos y compartiendo las claves para una formación de alto nivel. Estamos aquí para impulsarte a ser el experto que el sector dental demanda."
+		>
+			<School slot="icono" />
+		</Banner>
 	</section>
 </Layout>
 
@@ -87,11 +101,18 @@ import Card from "../components/Card.astro";
 		max-width: 490px;
 	}
 
-	.card {
-		margin-top: 40px;
+	.card,
+	.banner {
+		margin-top: 20px;
 	}
 
-/* ==========
+	.banner {
+		max-width: 950px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	/* ==========
 | RESPONSIVE | 
 ============= */
 	@media screen and (max-width: 760px) {
