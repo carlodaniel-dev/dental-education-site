@@ -1,0 +1,87 @@
+---
+import "../styles/global.css";
+
+import Header from "../components/Header.astro";
+import Sidebar from "../components/Sidebar.astro";
+
+import Footer from "../components/Footer.astro";
+
+const { currentPage } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<meta
+			name="description"
+			content="Perfección Dental — Tu camino hacia la excelencia bucal. Aprende hábitos saludables, técnicas profesionales y todo lo que necesitas para alcanzar tu mejor sonrisa."
+		/>
+		<meta
+			name="keywords"
+			content="odontología, higiene bucal, cepillado dental, especialidad dental, salud bucal"
+		/>
+		<link rel="icon" type="image/svg+xml" href="" />
+		<link rel="icon" href="/favicon.ico" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Perfección Dental</title>
+	</head>
+
+	<body>
+		<Header currentPage={currentPage} />
+		<Sidebar currentPage={currentPage} />
+
+		<main class="main_content">
+			<slot />
+
+			<div>
+				<Footer />
+			</div>
+		</main>
+	</body>
+</html>
+
+<script>
+	document.addEventListener("DOMContentLoaded", () => {
+		const btn_open = document.getElementById("btn_open");
+		const sidebar = document.getElementById("sidebar");
+		const main_content = document.querySelector(".main_content");
+
+		if (btn_open && sidebar && main_content) {
+			// Ocultar sidebar al cargar en móvil
+			if (window.innerWidth <= 760) {
+				sidebar.style.left = "-200px";
+			}
+
+			// Toggle al hacer click en hamburguesa
+			btn_open.addEventListener("click", () => {
+				if (window.innerWidth <= 760) {
+					sidebar.classList.toggle("sidebar_expanded");
+					if (!sidebar.classList.contains("sidebar_expanded")) {
+						sidebar.style.left = "-200px";
+					} else {
+						sidebar.style.left = "0";
+					}
+				} else {
+					sidebar.classList.toggle("sidebar_expanded");
+					main_content.classList.toggle("main_content_expanded");
+				}
+			});
+
+			// Comportamiento al cambiar tamaño de pantalla
+			window.addEventListener("resize", () => {
+				if (window.innerWidth <= 760) {
+					main_content.classList.remove("main_content_expanded");
+					sidebar.classList.remove("sidebar_expanded");
+					sidebar.style.left = "-200px";
+				} else {
+					sidebar.classList.remove("sidebar_expanded");
+					sidebar.style.left = "";
+					sidebar.style.width = "";
+					main_content.classList.remove("main_content_expanded");
+				}
+			});
+		}
+	});
+</script>

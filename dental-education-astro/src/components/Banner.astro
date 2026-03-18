@@ -1,0 +1,52 @@
+---
+interface Props {
+    titulo: string;
+    descripcion: string;
+    textoEnlace: string;
+}
+
+const { titulo, descripcion, textoEnlace } = Astro.props;
+---
+
+<div
+    class="banner bg-neutral-primary-soft block p-6 border border-default rounded-base shadow-xs"
+>
+    <slot name="icono" />
+    <h5 class="mb-2 text-2xl font-semibold tracking-tight text-heading">
+        {titulo}
+    </h5>
+    <p class="mb-3 text-body">
+        {descripcion}
+    </p>
+
+    {textoEnlace}
+</div>
+
+<style>
+    .banner {
+        background-color: #f0f7ff;
+        position: relative;
+    }
+
+    .banner::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 3px;
+        background: linear-gradient(to right, #1783db, transparent);
+        border-radius: 12px 12px 0 0;
+    }
+
+    .banner::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        width: 3px;
+        background: linear-gradient(to bottom, #1783db, transparent);
+        border-radius: 12px 0 0 12px;
+    }
+</style>

@@ -1,0 +1,137 @@
+---
+import Home from "./icon/Home.astro";
+import Book from "./icon/Book.astro";
+
+const { currentPage } = Astro.props;
+
+const nav_items = [
+    { label: "Inicio", href: "/", icon: Home },
+    { label: "Recursos", href: "/recursos", icon: Book },
+];
+---
+
+<nav class="sidebar" id="sidebar">
+    <div class="sidebar_divider"></div>
+    {
+        nav_items.map((item) => (
+            <a
+                href={item.href}
+                class={`sidebar_item ${currentPage === item.label ? "sidebar_item_active" : ""}`}
+                title={item.label}
+            >
+                <item.icon />
+                <span class="sidebar_label">{item.label}</span>
+            </a>
+        ))
+    }
+</nav>
+
+<style>
+    .sidebar {
+        width: 68px;
+        height: 100%;
+        background: #162032;
+        position: fixed;
+        top: 64px;
+        left: 0;
+        z-index: 100;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 16px 0;
+        gap: 4px;
+        border-right: 0.5px solid rgba(23, 131, 219, 0.2);
+        transition:
+            left 600ms ease,
+            width 600ms ease;
+        overflow: hidden;
+    }
+
+    .sidebar_divider {
+        width: 32px;
+        height: 0.5px;
+        background: rgba(255, 255, 255, 0.08);
+        margin: 8px auto;
+        transition: width 600ms ease;
+    }
+
+    .sidebar_item {
+        width: 44px;
+        height: 44px;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #64748b;
+        border-left: 2px solid transparent;
+        transition: all 0.2s;
+        overflow: hidden;
+        white-space: nowrap;
+    }
+
+    .sidebar_item:hover {
+        background: rgba(23, 131, 219, 0.1);
+        color: #94a3b8;
+    }
+
+    .sidebar_item_active {
+        background: rgba(23, 131, 219, 0.15);
+        color: #38bdf8;
+        border-left-color: #1783db;
+    }
+
+    .sidebar_label {
+        display: none;
+        font-size: 13px;
+        margin-left: 12px;
+    }
+
+    .sidebar_expanded {
+        width: 200px;
+        align-items: flex-start;
+    }
+
+    .sidebar_expanded .sidebar_divider {
+        width: 80%;
+    }
+
+    .sidebar_expanded .sidebar_item {
+        width: 100%;
+        padding: 10px 20px;
+        border-radius: 0;
+        justify-content: flex-start;
+    }
+
+    .sidebar_expanded .sidebar_label {
+        display: inline;
+    }
+
+/* ================================
+   RESPONSIVE SIDEBAR
+================================ */
+    @media screen and (max-width: 760px) {
+        .sidebar {
+            left: -200px;
+            width: 200px;
+            transition: left 1000ms ease-in-out,
+            width 1000ms ease-in-out;
+        }
+
+        .sidebar_expanded {
+            left: 0;
+            width: 200px;
+            align-items: flex-start;
+        }
+
+        .sidebar_expanded .sidebar_item {
+            width: 100%;
+            padding: 10px 20px;
+            border-radius: 0;
+            justify-content: flex-start;
+        }
+
+        .sidebar_expanded .sidebar_label {
+            display: inline;
+        }
+    }
+</style>

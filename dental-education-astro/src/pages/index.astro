@@ -1,0 +1,163 @@
+---
+import "../styles/global.css";
+
+import Layout from "../layouts/Layout.astro";
+
+import Card from "../components/Card.astro";
+import Banner from "../components/Banner.astro";
+import Footer from "../components/Footer.astro";
+
+import School from "../components/icon/School.astro";
+---
+
+<Layout currentPage="Inicio">
+	<section class="hero">
+		<div class="hero_image">
+			<img src="/img/toothDoc.webp" alt="Herramientas dentales" />
+		</div>
+		<div class="hero_content">
+			<span class="hero_tag">Bienvenido</span>
+			<h1 class="hero_title">Camino a la Perfección Dental</h1>
+			<p class="hero_description">
+				Transformamos tu salud bucal con un enfoque integral. Aprende
+				hábitos saludables, técnicas profesionales y todo lo que
+				necesitas para alcanzar tu mejor sonrisa.
+			</p>
+		</div>
+	</section>
+
+	<section class="card">
+		<Card />
+	</section>
+
+	<section class="banner">
+		<Banner
+			titulo="Especialízate en Odontología"
+			descripcion="¿Listo para dar el siguiente paso?..."
+			textoEnlace="Elegir una especialidad es una decisión estratégica. No solo abre puertas, define tu futuro, evaluando los requisitos y compartiendo las claves para una formación de alto nivel. Estamos aquí para impulsarte a ser el experto que el sector dental demanda."
+		>
+			<School slot="icono" />
+		</Banner>
+	</section>
+</Layout>
+
+<style>
+	.hero {
+		background: #0f172a;
+		display: flex;
+		align-items: center;
+		gap: 40px;
+		padding: 40px 0;
+		border-radius: 20px;
+	}
+
+	.hero_image {
+		flex: 1;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.hero_image img {
+		width: 100%;
+		max-width: 420px;
+		height: auto;
+		filter: drop-shadow(0px 8px 24px rgba(23, 131, 219, 0.3));
+	}
+
+	.hero_content {
+		flex: 1;
+		display: flex;
+		flex-direction: column;
+		gap: 20px;
+	}
+
+	.hero_tag {
+		font-size: 11px;
+		font-weight: 500;
+		color: #1783db;
+		text-transform: uppercase;
+		letter-spacing: 0.1em;
+		background: rgba(23, 131, 219, 0.1);
+		border: 0.5px solid rgba(23, 131, 219, 0.25);
+		border-radius: 20px;
+		padding: 4px 12px;
+		width: fit-content;
+	}
+
+	.hero_title {
+		font-size: 2.2em;
+		font-weight: 700;
+		color: #f1f5f9;
+		line-height: 1.2;
+		text-align: left;
+		text-transform: none;
+	}
+
+	.hero_description {
+		font-size: 15px;
+		color: #94a3b8;
+		line-height: 1.7;
+		max-width: 490px;
+	}
+
+	.card,
+	.banner {
+		margin-top: 20px;
+	}
+
+	.banner {
+		max-width: 950px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	/* ==========
+| RESPONSIVE | 
+============= */
+	@media screen and (max-width: 1024px) {
+    .hero {
+        gap: 24px;
+        padding: 32px 20px;
+    }
+    .hero_title {
+        font-size: 1.8em;
+    }
+    .banner {
+        max-width: 100%;
+    }
+}
+
+@media screen and (max-width: 760px) {
+    .hero {
+        flex-direction: column;
+        padding: 24px 16px;
+        gap: 16px;
+    }
+    .hero_image img {
+        max-width: 280px;
+    }
+    .hero_title {
+        font-size: 1.6em;
+    }
+    .hero_content {
+        gap: 16px;
+        padding: 0 16px 16px;
+    }
+    .hero_description {
+        max-width: 100%;
+    }
+    .banner {
+        max-width: 100%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .hero_title {
+        font-size: 1.3em;
+    }
+    .hero_image img {
+        max-width: 200px;
+    }
+}
+</style>

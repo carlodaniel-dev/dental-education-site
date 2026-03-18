@@ -1,0 +1,42 @@
+@import "tailwindcss";
+@import "flowbite/src/themes/default";
+
+
+/* ================
+| LAYOUT PRINCIPAL | 
+=================== */
+.main_content {
+    margin-left: 68px;
+    margin-top: 64px;
+    padding: 25px;
+    transition: margin-left 300ms cubic-bezier(0.785, 0.135, 0.15, 0.86);
+}
+
+.main_content_expanded {
+    margin-left: 200px;
+}
+
+/* ==========
+| RESPONSIVE | 
+============= */
+@media screen and (max-width: 1024px) {
+    .main_content {
+        padding: 20px;
+    }
+}
+
+@media screen and (max-width: 760px) {
+    .main_content {
+        margin-left: 0;
+        padding: 16px;
+    }
+    .main_content_expanded {
+        margin-left: 0;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .main_content {
+        padding: 12px;
+    }
+}
