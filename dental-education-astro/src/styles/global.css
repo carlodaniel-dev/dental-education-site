@@ -19,12 +19,24 @@
 /* ==========
 | RESPONSIVE | 
 ============= */
+@media screen and (max-width: 1024px) {
+    .main_content {
+        padding: 20px;
+    }
+}
+
 @media screen and (max-width: 760px) {
     .main_content {
         margin-left: 0;
+        padding: 16px;
     }
-
     .main_content_expanded {
         margin-left: 0;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .main_content {
+        padding: 12px;
     }
 }

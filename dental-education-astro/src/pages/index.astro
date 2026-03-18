@@ -115,24 +115,49 @@ import School from "../components/icon/School.astro";
 	/* ==========
 | RESPONSIVE | 
 ============= */
-	@media screen and (max-width: 760px) {
-		.hero {
-			flex-direction: column;
-			min-height: auto;
-			gap: 24px;
-			padding: 24px 0;
-		}
+	@media screen and (max-width: 1024px) {
+    .hero {
+        gap: 24px;
+        padding: 32px 20px;
+    }
+    .hero_title {
+        font-size: 1.8em;
+    }
+    .banner {
+        max-width: 100%;
+    }
+}
 
-		.hero_image img {
-			max-width: 280px;
-		}
+@media screen and (max-width: 760px) {
+    .hero {
+        flex-direction: column;
+        padding: 24px 16px;
+        gap: 16px;
+    }
+    .hero_image img {
+        max-width: 280px;
+    }
+    .hero_title {
+        font-size: 1.6em;
+    }
+    .hero_content {
+        gap: 16px;
+        padding: 0 16px 16px;
+    }
+    .hero_description {
+        max-width: 100%;
+    }
+    .banner {
+        max-width: 100%;
+    }
+}
 
-		.hero_title {
-			font-size: 1.6em;
-		}
-
-		.hero_content {
-			gap: 16px;
-		}
-	}
+@media screen and (max-width: 480px) {
+    .hero_title {
+        font-size: 1.3em;
+    }
+    .hero_image img {
+        max-width: 200px;
+    }
+}
 </style>
