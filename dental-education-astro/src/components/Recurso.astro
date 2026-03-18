@@ -1,0 +1,112 @@
+---
+import RecursoCard from "./RecursoCard.astro";
+
+const DOCUMENTOS = [
+    {
+        title: "Guía de Hábitos de Higiene Bucal",
+        description: "Todo lo que necesitas saber para mantener una rutina de higiene bucal efectiva: cepillado, hilo dental, enjuague y visitas al dentista.",
+        urlPdf: "/doc/guia_higiene_bucal.pdf"
+    },
+    {
+        title: "Técnicas de Cepillado Dental",
+        description: "Aprende las técnicas de cepillado más recomendadas por odontólogos: Bass, Stillman, Fones y más, para una limpieza óptima.",
+        urlPdf: "/doc/tecnicas_cepillado_dental.pdf"
+    },
+];
+
+const CLASES = [
+    {
+        title: "Cambio de Hábitos y Mentalidad de Crecimiento",
+        description: "Presentación sobre cómo transformar hábitos y adoptar una mentalidad de crecimiento para mejorar tu desarrollo personal y profesional en odontología.",
+        urlPdf: "https://www.canva.com/design/DAGIWznaLLA/tmJRWifE2SNCXDeNfaPVYQ/edit"
+    },
+    {
+        title: "Trabajo en Equipo en Proyectos Odontológicos",
+        description: "Aprende a aprovechar las diferencias individuales dentro de un equipo para lograr mejores resultados en proyectos grupales del área dental.",
+        urlPdf: "https://www.canva.com/design/DAGIcJHupLM/JoDmXNHFAHJ7zPwSfTmHOA/edit"
+    },
+];
+---
+
+<div class="recursos_wrap">
+
+    <div class="recursos_section">
+        <div class="recursos_section_header">
+            <div class="recursos_section_icon">
+                <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16">
+                    <path d="M14 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/>
+                </svg>
+            </div>
+            <h2 class="recursos_section_title">Documentos</h2>
+            <span class="recursos_section_count">{DOCUMENTOS.length} archivos</span>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+            {DOCUMENTOS.map((card) => <RecursoCard {...card} />)}
+        </div>
+    </div>
+
+    <div class="recursos_section">
+        <div class="recursos_section_header">
+            <div class="recursos_section_icon">
+                <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16">
+                    <path d="M21 3H3c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-9 9L3 5h18L12 12z"/>
+                </svg>
+            </div>
+            <h2 class="recursos_section_title">Clases</h2>
+            <span class="recursos_section_count">{CLASES.length} presentaciones</span>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+            {CLASES.map((card) => <RecursoCard {...card} />)}
+        </div>
+    </div>
+
+</div>
+
+<style>
+    .recursos_wrap {
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+    }
+
+    .recursos_section {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .recursos_section_header {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding-bottom: 12px;
+        border-bottom: 0.5px solid rgba(23, 131, 219, 0.2);
+    }
+
+    .recursos_section_icon {
+        width: 32px;
+        height: 32px;
+        border-radius: 8px;
+        background: #e6f1fb;
+        border: 0.5px solid #b5d4f4;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #1783db;
+    }
+
+    .recursos_section_title {
+        font-size: 15px;
+        font-weight: 500;
+        margin: 0;
+    }
+
+    .recursos_section_count {
+        font-size: 11px;
+        color: var(--color-text-secondary);
+        background: #f0f7ff;
+        border: 0.5px solid #b5d4f4;
+        border-radius: 20px;
+        padding: 2px 8px;
+    }
+</style>
