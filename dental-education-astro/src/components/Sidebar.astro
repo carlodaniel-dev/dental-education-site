@@ -4,9 +4,11 @@ import Book from "./icon/Book.astro";
 
 const { currentPage } = Astro.props;
 
+const base = import.meta.env.BASE_URL;
+
 const nav_items = [
-    { label: "Inicio", href: "/", icon: Home },
-    { label: "Recursos", href: "/recursos", icon: Book },
+    { label: "Inicio", href: `${base}`, icon: Home },
+    { label: "Recursos", href: `${base}recursos`, icon: Book },
 ];
 ---
 
