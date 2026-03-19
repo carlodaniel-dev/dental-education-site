@@ -20,13 +20,26 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
       - name: Setup Pages
         uses: actions/configure-pages@v4
 
-      - name: Install, build, and upload with Astro
-        uses: withastro/action@v3
+      - name: Install dependencies
+        run: npm install
+        working-directory: dental-education-astro
+
+      - name: Build
+        run: npm run build
+        working-directory: dental-education-astro
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
         with:
-          path: dental-education-astro
+          path: dental-education-astro/dist
 
   deploy:
     needs: build
