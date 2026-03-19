@@ -6,7 +6,7 @@ import tailwindcss from '@tailwindcss/vite';
 // https://astro.build/config
 export default defineConfig({
   site: 'https://carlodaniel-dev.github.io',
-  base: '/dental-education-site',
+  base: '/dental-education-site/',
   vite: {
     plugins: [tailwindcss()]
   }
