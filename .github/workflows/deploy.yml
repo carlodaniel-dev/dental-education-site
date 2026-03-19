@@ -29,11 +29,11 @@ jobs:
         uses: actions/configure-pages@v4
 
       - name: Install dependencies
-        run: npm install
+        run: npm ci
         working-directory: dental-education-astro
 
       - name: Build
-        run: npm run build
+        run: npx --yes astro build
         working-directory: dental-education-astro
 
       - name: Upload artifact
