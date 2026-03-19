@@ -2,7 +2,6 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    # Asegúrate de poner el nombre de la rama que usas (ej. main o astro-migration)
     branches: [main] 
 
 permissions:
@@ -20,7 +19,7 @@ jobs:
       - name: Install, build, and upload with Astro
         uses: withastro/action@v3
         with:
-          path: dental-education-astro # Ubicación de tu proyecto Astro
+          path: dental-education-astro
 
   deploy:
     needs: build
